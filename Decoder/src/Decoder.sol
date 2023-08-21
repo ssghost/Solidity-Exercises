@@ -7,9 +7,15 @@ contract Decoder {
         2. Return the decoded data
     */
     bytes public encoded;
+    struct Decoded {
+        string str;
+        uint256 num;
+    }
 
     function decodeData(
         bytes memory _data
-    ) public pure returns (string memory, uint256) {}
+    ) public pure returns (string memory, uint256) {(string memory str, uint256 num) = abi.decode(_data,(string, uint256));
+                                                    return (str, num);}
+    
 }
 
